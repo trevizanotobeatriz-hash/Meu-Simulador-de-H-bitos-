@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tela na Mão: simulador de tempo nas redes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Tela na Mão</h1>
+      <p>Descubra quantas horas da sua semana vão para as redes sociais.</p>
+    </header>
+
+    <section class="entrada">
+      <label for="horas">Horas por dia</label>
+      <input type="number" id="horas" min="0" max="24" step="0.5" placeholder="0">
+      <button id="calcular">Ver meu tempo</button>
+    </section>
+
+    <section id="resultado" class="escondido" aria-live="polite">
+      <p class="grande"><span id="semana">0</span><small>horas por semana</small></p>
+      <p class="mes"><span id="mes">0</span> horas por mês</p>
+
+      <div class="medidor" aria-hidden="true">
+        <div class="barra" id="barra"></div>
+        <div class="marca" style="left: 33.33%"><span>média<br>4 h</span></div>
+        <div class="marca" style="left: 50%"><span>alerta<br>6 h</span></div>
+      </div>
+
+      <p id="comparacao"></p>
+      <p id="reflexao" class="reflexao"></p>
+    </section>
+
+    <p id="erro" class="erro" role="alert"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

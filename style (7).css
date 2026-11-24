@@ -1,0 +1,145 @@
+:root {
+  --papel: #ece9ff;
+  --tinta: #1b1464;
+  --magenta: #e0245e;
+  --lilas: #b9b0f5;
+  --branco: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2.5rem 1.25rem 4rem;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+main { max-width: 36rem; margin: 0 auto; }
+
+h1 {
+  margin: 0;
+  font-size: 3.2rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+header p { margin: .6rem 0 2rem; font-size: 1.1rem; }
+
+.entrada {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .4rem .75rem;
+  align-items: end;
+}
+
+.entrada label { grid-column: 1 / -1; font-weight: bold; }
+
+input {
+  min-width: 0;
+  padding: .6rem 0;
+  font: inherit;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--tinta);
+  background: transparent;
+  border: 0;
+  border-bottom: 4px solid var(--tinta);
+  border-radius: 0;
+}
+
+input:focus-visible { outline: none; border-bottom-color: var(--magenta); }
+
+button {
+  padding: .9rem 1.4rem;
+  font: inherit;
+  font-weight: bold;
+  color: var(--branco);
+  background: var(--magenta);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+button:hover { background: #bd1a4b; }
+button:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+
+.escondido { display: none; }
+
+#resultado { margin-top: 2.5rem; }
+
+.grande {
+  margin: 0;
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--magenta);
+}
+
+.grande small {
+  display: block;
+  margin-top: .3rem;
+  font-size: 1.1rem;
+  letter-spacing: 0;
+  color: var(--tinta);
+}
+
+.mes { margin: .5rem 0 2.5rem; }
+
+.medidor {
+  position: relative;
+  height: 1.4rem;
+  margin-bottom: 3.2rem;
+  background: var(--lilas);
+  border-radius: 999px;
+}
+
+.barra {
+  height: 100%;
+  width: 0;
+  background: var(--tinta);
+  border-radius: 999px;
+  transition: width .6s ease;
+}
+
+.marca {
+  position: absolute;
+  top: -.4rem;
+  bottom: -.4rem;
+  width: 2px;
+  background: var(--magenta);
+}
+
+.marca span {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateX(-50%);
+  margin-top: .3rem;
+  font-size: .8rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.reflexao {
+  padding: 1rem 1.2rem;
+  font-size: 1.15rem;
+  font-weight: bold;
+  background: var(--branco);
+  border-radius: 14px;
+}
+
+.erro { margin-top: 1rem; font-weight: bold; color: var(--magenta); }
+
+@media (max-width: 420px) {
+  h1 { font-size: 2.5rem; }
+  .grande { font-size: 4.5rem; }
+  .entrada { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barra { transition: none; }
+}
